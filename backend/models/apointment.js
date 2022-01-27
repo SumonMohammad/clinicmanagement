@@ -17,7 +17,7 @@ const apointmentSchema = new mongoose.Schema({
     contact:{
         type: Number,
         required: [true, "Please Enter Patient contact Number"],
-        trim:true,
+         
         maxlength:[20, "Patient contact number  should not exceed 20 characters"]
 
     },
