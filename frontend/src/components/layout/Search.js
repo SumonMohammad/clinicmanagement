@@ -13,10 +13,10 @@ const Search = ({ history }) => {
         }
     }
     return (
-        <form onSubmit={searchHandler}  className="border-2 flex items-center relative  border-gray-300 bg-white h-full px-5 pr-16 rounded-lg text-sm w-1/2 focus:outline-none text-gray-600" >
+        <form onSubmit={searchHandler}  className="border-2 mt-2   md:flex md:items-center relative w-4/5 border-gray-300 bg-white h-full md:px-5 md:pr-16 rounded-lg text-sm md:w-1/2 focus:outline-none text-gray-600" >
             
                 <input
-                    className="focus:outline-none w-4/5"
+                    className="focus:outline-none w-4/5 px-2 py-2"
                     type="search"
                     name="search"
                     placeholder="Search Here"
@@ -24,7 +24,7 @@ const Search = ({ history }) => {
                 />
                 <button
                     type="submit"
-                    className='absolute text-gray-600 border-2 border-gray-300 px-2 py-1 rounded-md right-0 mt-1.5 top-0 mr-4'
+                    className='absolute text-gray-600 border-2 mr-2 md:pb-1 md:mt-1.5  border-gray-300 mt-1 px-2 py-0.5 rounded-md right-0'
                 >
                     Search
                 </button>

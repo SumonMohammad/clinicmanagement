@@ -23,6 +23,10 @@ exports.getPatients= catchAsyncErrors( async (req,res, next)=>{
                         .search()
                         .filter()
                         .pagination(resPerPage)
+     
+    
+
+     
 
     const patients = await apiFeatures.query;
     
@@ -30,6 +34,8 @@ exports.getPatients= catchAsyncErrors( async (req,res, next)=>{
         success:true,
         count:patients.length,
         patientCount,
+  
+        resPerPage,
         patients
          
     })

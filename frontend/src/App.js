@@ -1,17 +1,21 @@
-import { Routes, Route, useNavigate } from "react-router-dom"
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from "./components/Home";
- 
- 
-import PatientDetails from "./components/patient/PatientDetails";
- 
+import Header from './components/layout/Header';
+
+
+import PatientDetail from "./components/patient/PatientDetail";
+
+
 function App() {
   return (
 
-    <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route path="/patient/:id" element={<PatientDetails />} />
-          
-    </Routes>
+    <Router>
+      <Header />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/search/:keyword" component={Home} />
+      <Route exact path="/singlepatient/:id" component={PatientDetail}/>
+
+    </Router>
 
 
   );

@@ -3,10 +3,12 @@ import {
     ALL_PATIENT_SUCCESS,
     ALL_PATIENT_FAIL,
     PATIENT_DETAILS_REQUEST,
+    
     PATIENT_DETAILS_SUCCESS,
     PATIENT_DETAILS_FAIL,
     CLEAR_ERRORS
 } from "../constants/patientsConstant"
+
 
 export const patientsReducer = (state = { patients: [] }, action) => {
     switch (action.type) {
@@ -20,7 +22,10 @@ export const patientsReducer = (state = { patients: [] }, action) => {
         case ALL_PATIENT_SUCCESS:
             return {
                 loading: false,
-                patients: action.payload.patients
+                patients: action.payload.patients,
+                patientCount:action.payload.patientCount,
+                resPerPage:action.payload.resPerPage,
+                 
             }
 
         case ALL_PATIENT_FAIL:
@@ -38,7 +43,7 @@ export const patientsReducer = (state = { patients: [] }, action) => {
     }
 }
 
-export const patientDetailsReducers = (state = {patient:{}}, action) => {
+export const patientDetailsReducers = (state = { singlePatient: {}}, action) => {
     switch (action.type) {
         case PATIENT_DETAILS_REQUEST:
             return {
@@ -48,7 +53,7 @@ export const patientDetailsReducers = (state = {patient:{}}, action) => {
         case PATIENT_DETAILS_SUCCESS:
             return {
                 loading: false,
-                patient: action.payload
+                singlePatient: action.payload
             }
         case PATIENT_DETAILS_FAIL:
             return {
